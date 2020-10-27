@@ -20,7 +20,7 @@ short_description = '`resizeImgForML` is a package for resize images for machie 
 setup(
     name=name,
     version=version,
-    url='https://github.com/k-mawa/',
+    url='https://github.com/k-mawa/resizeImgForML',
     description=short_description,
     long_description=readme,
     keywords=['machine', 'machine learning', 'resize', 'Pillow', 'PIL', 'openCV'],
