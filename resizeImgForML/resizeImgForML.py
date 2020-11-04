@@ -33,6 +33,29 @@ class Resizer():
 		else:
 			print("cannot detect any Image")
 
+	def convertPng2Jpg(self, imgs, savepath):
+		for i, num in zip(imgs, range(len(imgs))):
+			basename  = os.path.basename(i)
+			savefilepath = savepath + '/' + '{0:03d}'.format(num) + '.jpg'
+			print(savefilepath)
+			img = Image.open(i)
+			img = img.convert('RGB')
+			img.save(savefilepath, "JPEG", quality=100)
+	
+	def detectAllPngImg(self, path):
+		path = os.path.join(path,"*.png")
+		print(path)
+		try:
+			imgs = glob.glob(path)			
+		except:
+			imgs = None
+		if imgs != None:
+			imgs = glob.glob("*.png")
+			print("Image *.png detect Sccessfly!")
+			return imgs
+		else:
+			print("cannot detect any Image")
+
 	def expandSquare(self, img, backGroundColor):
 		wdth, hght = img.size
 		if wdth == hght:
